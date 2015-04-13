@@ -1,0 +1,2 @@
+module PossibleResponsesHelper
+end

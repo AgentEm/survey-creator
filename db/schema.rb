@@ -11,7 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150406012828) do
+ActiveRecord::Schema.define(version: 20150413034742) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.string   "colour"
+    t.string   "icon_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "survey_id"
+  end
+
+  create_table "possible_responses", force: :cascade do |t|
+    t.string   "value"
+    t.string   "colour"
+    t.string   "label"
+    t.string   "icon_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "question_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string   "question_id"
+    t.text     "label"
+    t.string   "question_type_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "category_id"
+  end
 
   create_table "surveys", force: :cascade do |t|
     t.string   "name"
@@ -19,6 +47,7 @@ ActiveRecord::Schema.define(version: 20150406012828) do
     t.boolean  "uses_category_selector"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -34,6 +63,8 @@ ActiveRecord::Schema.define(version: 20150406012828) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

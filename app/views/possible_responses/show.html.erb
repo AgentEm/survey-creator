@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @possible_response.value %>
+</p>
+
+<p>
+  <strong>Colour:</strong>
+  <%= @possible_response.colour %>
+</p>
+
+<p>
+  <strong>Label:</strong>
+  <%= @possible_response.label %>
+</p>
+
+<p>
+  <strong>Icon:</strong>
+  <%= @possible_response.icon_id %>
+</p>
+
+<%= link_to 'Edit', edit_possible_response_path(@possible_response) %> |
+<%= link_to 'Back', possible_responses_path %>

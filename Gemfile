@@ -27,6 +27,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Devise is a flexible authentication solution: https://github.com/plataformatec/devise
 gem 'devise'
 
+gem 'omniauth-github'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
