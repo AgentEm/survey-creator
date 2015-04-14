@@ -15,6 +15,8 @@ class CategoriesController < ApplicationController
   # GET /categories/new
   def new
     @category = Category.new
+    # raise 'hell'
+    @category.survey_id = params[:survey_id]
   end
 
   # GET /categories/1/edit
@@ -69,6 +71,6 @@ class CategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
-      params.require(:category).permit(:name, :colour, :icon_id)
+      params.require(:category).permit(:name, :colour, :icon_id, :survey_id)
     end
 end
