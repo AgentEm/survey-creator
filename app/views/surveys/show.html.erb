@@ -14,6 +14,6 @@
   <strong>Uses category selector:</strong>
   <%= @survey.uses_category_selector %>
 </p>
-
-<%= link_to 'Edit', edit_survey_path(@survey) %> |
-<%= link_to 'Back', surveys_path %>
+<%= link_to 'Create a category for this survey', new_category_path(survey_id: @survey.id) %>
+<%= link_to 'Edit', edit_survey_path(@survey) %>
+<%= link_to 'Back to all surveys', surveys_path %>
