@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+question:
+<%= @possible_response.question.label %><br>
+<%= @possible_response.question_id %>
+
 <p>
   <strong>Value:</strong>
   <%= @possible_response.value %>
@@ -20,5 +24,10 @@
   <%= @possible_response.icon_id %>
 </p>
 
-<%= link_to 'Edit', edit_possible_response_path(@possible_response) %> |
-<%= link_to 'Back', possible_responses_path %>
+<%= link_to 'Edit', edit_possible_response_path(@possible_response) %>
+
+<%= link_to 'Create another possible response for this question', new_possible_response_path(question_id: @possible_response.question_id), class: "btn", id: "btn" %>
+
+<!-- <%= link_to 'Back', possible_responses_path %> -->
+
+<%= link_to 'Back to all surveys', surveys_path %>

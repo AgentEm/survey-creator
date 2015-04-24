@@ -15,6 +15,7 @@ class PossibleResponsesController < ApplicationController
   # GET /possible_responses/new
   def new
     @possible_response = PossibleResponse.new
+    @possible_response.question_id = params[:question_id]
   end
 
   # GET /possible_responses/1/edit
@@ -69,6 +70,6 @@ class PossibleResponsesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def possible_response_params
-      params.require(:possible_response).permit(:value, :colour, :label, :icon_id)
+      params.require(:possible_response).permit(:value, :colour, :label, :icon_id, :question_id)
     end
 end

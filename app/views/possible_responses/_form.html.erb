@@ -11,6 +11,9 @@
     </div>
   <% end %>
 
+  <%= f.text_field :question_id %>
+  <!-- remove this when you know it's working for all the views -->
+
   <div class="field">
     <%= f.label :value %><br>
     <%= f.text_field :value %>
@@ -27,6 +30,7 @@
     <%= f.label :icon_id %><br>
     <%= f.text_field :icon_id %>
   </div>
+  <%= f.hidden_field :question_id %>
   <div class="actions">
     <%= f.submit %>
   </div>

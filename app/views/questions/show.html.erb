@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 category:
+<%= @question.category.name %><br>
 <%= @question.category_id %>
 
 <p>
@@ -17,7 +18,13 @@ category:
   <strong>Question type:</strong>
   <%= @question.question_type_id %>
 </p>
+
+<%= link_to 'Edit', edit_question_path(@question) %>
+
 <%= link_to 'Create another question for this category', new_question_path(category_id: @question.category_id) %>
 
-<%= link_to 'Edit', edit_question_path(@question) %> |
-<%= link_to 'See all questions', questions_path %>
+<%= link_to 'Create a possible response for this question',  new_possible_response_path(question_id: @question.id) %>
+
+<!-- <%= link_to 'See all questions', questions_path %> -->
+
+<%= link_to 'Back to all surveys', surveys_path %>
