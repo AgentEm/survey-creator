@@ -28,8 +28,7 @@
   </div>
   <div class="field">
     <%= f.label :icon_id %><br>
-    <%= f.text_field :icon_id %>
-  </div>
+    <%= select_tag(:icon_id, options_for_select([["hamburger","hamburger"], ["female","female"],["checkmark","checkmark"], ["cherry","cherry"]])) %>  </div>
   <%= f.hidden_field :question_id %>
   <div class="actions">
     <%= f.submit %>

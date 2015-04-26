@@ -17,10 +17,21 @@
   </div>
   <div class="field">
     <%= f.label :languages %><br>
-    <%= f.text_field :languages %>
-  </div>
+    <%= f.hidden_field :languages %>
+    <label for="en">en</label>
+    <input type="checkbox" name="en">
+
+    <label for="fr">fr</label>
+    <input type="checkbox" name="fr">
+
+    <label for="sp">sp</label>
+    <input type="checkbox" name="sp">
+
+    <label for="ch">ch</label>
+    <input type="checkbox" name="ch">
+<!-- add multi select checkboxes here that all go into languages -->
   <div class="field">
-    <%= f.label :uses_category_selector %><br>
+    <%= f.label :uses_category_selector, "Use the category selector:" %><br>
     <%= f.check_box :uses_category_selector %>
   </div>
   <div class="actions">
