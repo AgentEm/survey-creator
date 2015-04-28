@@ -1,9 +1,11 @@
-<h1>TickiT Survey Creator</h1>
-<p>Welcome to the Shift Health Tickit Survey Creator! This site will let you create the basics of a TickiT survey through a series of forms, and then generate a JSON doc for you at the end that you can then edit and upload to superadmin.</p>
-<form action="surveys/new">
-  <input type="submit" value="create a survey">
-</form>
+<div class="intro-container">
+  <h1>TickiT Survey Creator.</h1>
+  <p>Welcome to the Shift Health Tickit Survey Creator! This site will let you create the basics of a TickiT survey through a series of forms, and then generate a JSON doc for you at the end that you can then edit and upload to superadmin.</p>
+  <form action="surveys/new">
+    <input type="submit" value="create a survey" class="btn btn-default">
+  </form>
 
 
-<p>Problems? <%= link_to "File a bug report!", "https://github.com/AgentEm/survey-creator/issues", :target => "_blank" %></p>
-<small>Created by: <%= mail_to "emily@shifthealth.ca","Emily Porta" %></small>
+  <p>Problems? <%= link_to "File a bug report!", "https://github.com/AgentEm/survey-creator/issues", :target => "_blank" %></p>
+  <small>Created by: <%= mail_to "emily@shifthealth.ca","Emily Porta" %></small>
+</div>

@@ -30,6 +30,7 @@ class SurveysController < ApplicationController
     else
       langs = langs + '0'
     end
+    
     if params[:fr] == true
       langs = langs + '1'
     else

@@ -3,4 +3,5 @@ class Survey < ActiveRecord::Base
   belongs_to :user
 
   validates :name, :languages, presence: true
+  validates :name, uniqueness: true
 end

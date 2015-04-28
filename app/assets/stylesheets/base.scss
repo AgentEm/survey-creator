@@ -1,0 +1,28 @@
+html, body {
+  height: 100%;
+  font-size: 16px;
+}
+body {
+  background-color: #1dadef;
+  color: #333;
+}
+h1 {
+  font-size: 6rem;
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+}
+p {
+  display: inline-block;
+  max-width: 500px;
+}
+
+.btn-default {
+  background-color: transparent;
+  border-color: #fff;
+  color: #fff;
+  &:hover {
+    background-color: initial;
+    border-color: initial;
+    color: initial;
+  }
+}
