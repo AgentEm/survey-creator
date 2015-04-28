@@ -17,7 +17,28 @@
   </div>
   <div class="field">
     <%= f.label :colour %><br>
-    <!-- options for color here in drop down list -->
+    <%= f.select(:colour, [
+    "l_yellow",
+    "yellow",
+    "l_orange",
+    "orange",
+    "l_limegreen",
+    "limegreen",
+    "l_forestgreen",
+    "forestgreen",
+    "teal",
+    "tickitblue",
+    "l_skyblue",
+    "skyblue",
+    "l_navyblue",
+    "navyblue",
+    "l_violet",
+    "violet",
+    "l_purple",
+    "purple",
+    "l_pink",
+    "pink"
+    ]) %>
   </div>
   <div class="field">
     <%= f.label :icon_id %><br>
