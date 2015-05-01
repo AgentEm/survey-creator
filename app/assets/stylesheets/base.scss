@@ -26,6 +26,19 @@ p {
   }
 }
 
+.show-small {
+  display:none;
+  @media (max-width: 767px) {
+    display:inline;
+  }
+}
+.show-large {
+  display: none;
+  @media (min-width: 767px) {
+    display: inline;
+  }
+}
+
 .alert {
   -webkit-animation: alert-fade 0.7s 1 forwards 2s;
   animation: alert-fade 0.7s 1 forwards 2s;

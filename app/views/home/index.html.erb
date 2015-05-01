@@ -1,15 +1,12 @@
 <div class="intro-container">
-  <h1>TickiT Survey Creator.</h1>
+  <h1>TickiT Survey Creat<span class="show-large">o</span><i class="fa fa-cog fa-spin show-small"></i>r<i class="fa fa-cog fa-spin show-large"></i></h1>
 
-  <p>Welcome to the Shift Health Tickit Survey Creator! This site will let you create the basics of a TickiT survey through a series of forms, and then generate a JSON doc for you at the end that you can then edit and upload to superadmin.</p>
+  <p>Welcome to the Shift Health TickiT Survey Creator! This site will let you create the basics of a TickiT survey through a series of forms, and generate a JSON doc in the browser that you can then edit and upload to superadmin.</p>
   <form action="surveys/new">
     <input type="submit" value="create a survey" class="btn btn-default">
   </form>
 
-  <p>Problems? <%= link_to "File a bug report!", "https://github.com/AgentEm/survey-creator/issues", :target => "_blank" %></p>
-  <p>Made with
-    <strong><span class="rotating">love, coffee, code, 90's jams</span></strong>
-    by <%= link_to "Emily.","http://emilyporta.com", :target => "_blank" %></p>
+  <small>Made with <strong><span class="rotating">love, coffee, code, 90's jams</span></strong> by <%= link_to "Emily.","http://emilyporta.com", :target => "_blank" %></small>
 </div>
 <script>
   $(".rotating").textrotator({

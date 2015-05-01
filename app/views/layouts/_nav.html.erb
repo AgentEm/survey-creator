@@ -21,11 +21,11 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <% if user_signed_in? %>
-          <li class="bootstrap-link-padding">Logged in as <strong><%= current_user.email %></strong></li>
-          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-        <% end %>
         <li><%= link_to "File a bug", "https://github.com/AgentEm/survey-creator/issues", :target => "_blank" %></li>
+        <% if user_signed_in? %>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+          <li class="bootstrap-link-padding">Logged in as <strong><%= current_user.email %></strong></li>
+        <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

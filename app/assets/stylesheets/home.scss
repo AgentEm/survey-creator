@@ -6,27 +6,64 @@
   width: 75%;
   position: relative;
   top: 35%;
+  -webkit-transform: translateY(-35%);
   transform: translateY(-35%);
   margin: 0 auto;
+  padding: 1rem;
   color: #fff;
+  @media (max-width: 767px){
+    width: 100%;
+    top: 25%;
+    -webkit-transform: translateY(-25%);
+    transform: translateY(-25%);
+  }
   h1 {
     font-size: 6rem;
     font-family: 'Raleway', sans-serif;
     text-transform: uppercase;
     line-height: 0.9;
     max-width: 600px;
+    @media (max-width: 767px) {
+      font-size: 3.5rem;
+      max-width: 400px;
+    }
   }
   p {
-    font-size: 1.3rem;
     margin-top: 3rem;
     margin-bottom: 3rem;
-    max-width: 700px;
+    max-width: 500px;
+    @media (max-width: 767px) {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      max-width: 400px;
+    }
   }
   a {
     color: #fff;
     font-style: italic;
     &:hover, &:focus {
       color: #fff;
+    }
+  }
+  p, .btn {
+    font-size: 1.3rem;
+    @media (max-width: 767px) {
+      font-size: 1rem;
+    }
+  }
+  .btn {
+    margin-bottom: 1rem;
+/*     @media (max-width: 767px) {
+  margin: 1rem auto;
+  display: block;
+} */
+  }
+  .fa-spin {
+    -webkit-animation: fa-spin 20s infinite linear;
+    animation: fa-spin 20s infinite linear;
+    font-size: 6rem;
+    @media (max-width: 767px){
+      font-size: 3.5rem;
     }
   }
 }
