@@ -30,7 +30,7 @@ class SurveysController < ApplicationController
     else
       langs = langs + '0'
     end
-    
+
     if params[:fr] == true
       langs = langs + '1'
     else
@@ -81,7 +81,7 @@ class SurveysController < ApplicationController
   def destroy
     @survey.destroy
     respond_to do |format|
-      format.html { redirect_to surveys_url, notice: 'Survey was successfully destroyed.' }
+      format.html { redirect_to surveys_url, notice: 'Survey was successfully deleted.' }
       format.json { head :no_content }
     end
   end

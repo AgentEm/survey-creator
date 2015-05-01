@@ -1,11 +1,13 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def github
-    # render json: request.env["omniauth.auth"]
+    @user = User.from_omniauth(request.env["omniauth.auth"])
 
-    @user = # TODO: Find a user by provider and uid
-    if @user.nil?
-      @user = User.create() # TODO: create a user with omniauth params
+    if @user.persisted?
+      sign_in_and_redirect @user, :event => :authentication
+      set_flash_message(:notice, :success, :kind => "Github") if is_navigational_format?
+    else
+      session["devise.github_data"] = request.env["omniauth.auth"]
+      redirect_to new_user_registration_url
     end
-    sign_in_and_redirect @user  # This line will sign the user in.
   end
 end

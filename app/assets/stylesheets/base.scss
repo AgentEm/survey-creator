@@ -5,15 +5,14 @@ html, body {
 body {
   background-color: #1dadef;
   color: #333;
-}
-h1 {
-  font-size: 6rem;
-  font-family: 'Raleway', sans-serif;
-  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
 }
 p {
   display: inline-block;
   max-width: 500px;
+}
+.btn {
+  font-size: 1rem;
 }
 
 .btn-default {
@@ -21,8 +20,23 @@ p {
   border-color: #fff;
   color: #fff;
   &:hover {
-    background-color: initial;
-    border-color: initial;
-    color: initial;
+    background-color: #fff;
+    border-color: #fff;
+    color: #1dadef;
   }
+}
+
+.alert {
+  -webkit-animation: alert-fade 0.7s 1 forwards 2s;
+  animation: alert-fade 0.7s 1 forwards 2s;
+}
+
+@keyframes alert-fade{
+from {opacity :1;}
+to {opacity :0;}
+}
+
+@-webkit-keyframes alert-fade{
+from {opacity :1;}
+to {opacity :0;}
 }

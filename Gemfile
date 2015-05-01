@@ -15,6 +15,9 @@ gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.4.1'
 #bootstrap-sass https://rubygems.org/gems/bootstrap-sass
 
+gem "font-awesome-rails"
+#https://github.com/bokmann/font-awesome-rails
+
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 

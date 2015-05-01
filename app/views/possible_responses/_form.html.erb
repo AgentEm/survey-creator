@@ -17,15 +17,36 @@
   </div>
   <div class="field">
     <%= f.label :colour %><br>
-    <%= f.text_field :colour %>
-  </div>
+    <%= f.select(:colour, [
+    "l_yellow",
+    "yellow",
+    "l_orange",
+    "orange",
+    "l_limegreen",
+    "limegreen",
+    "l_forestgreen",
+    "forestgreen",
+    "teal",
+    "tickitblue",
+    "l_skyblue",
+    "skyblue",
+    "l_navyblue",
+    "navyblue",
+    "l_violet",
+    "violet",
+    "l_purple",
+    "purple",
+    "l_pink",
+    "pink"
+    ]) %>
+    </div>
   <div class="field">
     <%= f.label :label %><br>
     <%= f.text_field :label %>
   </div>
   <div class="field">
-    <%= f.label :icon_id %><br>
-    <%= f.textfield :icon_id %>
+    <%= f.label :icon_id, "icon_id" %><br>
+    <%= f.text_field :icon_id %>
   </div>
   <%= f.hidden_field :question_id %>
   <div class="actions">

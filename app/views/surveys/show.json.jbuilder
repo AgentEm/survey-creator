@@ -10,7 +10,9 @@ json.categories @survey.categories do |category|
     json.possible_responses question.possible_responses do |response|
       json.value response.value
       json.label response.label
-      json.icon_id response.icon_id
+      if response.icon_id.present?
+        json.icon_id response.icon_id
+      end
       json.colour response.colour
     end
   end

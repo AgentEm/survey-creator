@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label "question_id", :question_id %><br>
+    <%= f.label "Question_id", :question_id %><br>
     <%= f.text_field :question_id %>
   </div>
   <div class="field">
@@ -20,8 +20,24 @@
     <%= f.text_area :label %>
   </div>
   <div class="field">
-    <%= f.label :question_type_id %><br>
-    <%= f.text_field :question_type_id %>
+    <%= f.label "Question_type_id", :question_type_id %><br>
+    <%= f.select(:question_type_id, [
+    "welcome",
+    "consent",
+    "number_picker",
+    "boxes",
+    "thumb",
+    "text_input",
+    "ranked_text_input",
+    "button",
+    "single_row_button",
+    "segmentd_slider",
+    "quote",
+    "message",
+    "three_column_short_answer",
+    "two_column_long_answer",
+    "month_year_picker"
+    ]) %>
   </div>
   <%= f.hidden_field :category_id %>
   <div class="actions">
