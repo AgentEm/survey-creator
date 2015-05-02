@@ -4,7 +4,9 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
   def index
-    @categories = Category.all
+    # @categories = Category.all
+    @survey = Survey.eager_load(:categories).find(params[:survey_id])
+    @categories = @survey.categories
   end
 
   # GET /categories/1

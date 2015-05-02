@@ -42,6 +42,7 @@ p {
 .alert {
   -webkit-animation: alert-fade 0.7s 1 forwards 2s;
   animation: alert-fade 0.7s 1 forwards 2s;
+  display: block;
 }
 
 @keyframes alert-fade{

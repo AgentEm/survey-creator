@@ -4,7 +4,9 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @questions = Question.all
+    # @questions = Question.all
+    @category = Category.eager_load(:questions).find(params[:category_id])
+    @questions = @category.questions
   end
 
   # GET /questions/1

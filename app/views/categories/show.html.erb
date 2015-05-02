@@ -26,6 +26,4 @@
 
 <%= link_to 'Create a question for this category',  new_question_path(category_id: @category.id) %>
 
-<!-- <%= link_to 'See all categories', categories_path %> -->
-
-<!-- TODO: add in path to categories where survey_id is the same as the category you're currently viewing -->
+<%= link_to 'See all categories for this survey', survey_categories_path(survey_id: @category.survey_id) %>

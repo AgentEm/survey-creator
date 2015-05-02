@@ -1,9 +1,4 @@
 <p>
-  <strong>Category:</strong>
-  <%= @question.category.name %>
-</p>
-
-<p>
   <strong>Question:</strong>
   <%= @question.question_id %>
 </p>
@@ -23,3 +18,5 @@
 <%= link_to 'Create another question for this category', new_question_path(category_id: @question.category_id) %>
 
 <%= link_to 'Create a possible response for this question',  new_possible_response_path(question_id: @question.id) %>
+
+<%= link_to 'See all questions for this category', category_questions_path(category_id: @question.category_id) %>

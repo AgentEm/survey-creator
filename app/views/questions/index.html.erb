@@ -23,6 +23,7 @@
         <td><%= link_to 'Delete', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= link_to 'Create Possible Response', new_possible_response_path(question_id: question.id) %></td>
       </tr>
+      <td><%= link_to 'See all possible responses for this question', question_possible_responses_path(question_id: question.id) %>
     <% end %>
   </tbody>
 </table>

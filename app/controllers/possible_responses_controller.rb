@@ -4,7 +4,9 @@ class PossibleResponsesController < ApplicationController
   # GET /possible_responses
   # GET /possible_responses.json
   def index
-    @possible_responses = PossibleResponse.all
+    # @possible_responses = PossibleResponse.all
+    @question = Question.eager_load(:possible_responses).find(params[:question_id])
+    @possible_responses = @question.possible_responses
   end
 
   # GET /possible_responses/1
