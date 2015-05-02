@@ -40,10 +40,14 @@ h2 {
     border-bottom:4px solid transparent;
     padding: 10px;
     text-align:center;
+    min-width: 20rem; //may have to make this a bit smaller for really small devices, do some testing and find out
     &:focus {
       outline:none;
       border-bottom: 4px solid #efe15e;
     }
+  }
+  input[type=submit] {
+    min-width: 10rem;
   }
   h2, form {
    text-align: center;
@@ -54,6 +58,7 @@ h2 {
 }
 .btn {
   font-size: 1rem;
+  padding: 10px;
 }
 
 .btn-default {
