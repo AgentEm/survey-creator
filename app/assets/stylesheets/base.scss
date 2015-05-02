@@ -11,6 +11,47 @@ p {
   display: inline-block;
   max-width: 500px;
 }
+h2 {
+  font-size: 2rem;
+}
+.container {
+  position: relative;
+  top: 35%;
+  transform: translateY(-35%);
+  color: #fff;
+  h2 {
+    font-family:'Raleway', sans-serif;
+    font-weight: 300;
+  }
+  a {
+    color: #fff;
+  }
+  form {
+    margin: 3rem 0;
+  }
+  label {
+    font-weight: 300;
+    margin: 0.5rem 0;
+    font-size: 1.3rem;
+  }
+  input[type=text], input[type=email], input[type=password] {
+    border-radius: 3px;
+    border: none;
+    border-bottom:4px solid transparent;
+    padding: 10px;
+    text-align:center;
+    &:focus {
+      outline:none;
+      border-bottom: 4px solid #efe15e;
+    }
+  }
+  h2, form {
+   text-align: center;
+  }
+}
+ input {
+  color: #333;
+}
 .btn {
   font-size: 1rem;
 }
@@ -25,6 +66,8 @@ p {
     color: #1dadef;
   }
 }
+
+
 
 .show-small {
   display:none;
@@ -42,15 +85,17 @@ p {
 .alert {
   -webkit-animation: alert-fade 0.7s 1 forwards 2s;
   animation: alert-fade 0.7s 1 forwards 2s;
-  display: block;
+  position: absolute;
+  top:0;
+  left:0;
 }
 
 @keyframes alert-fade{
-from {opacity :1;}
-to {opacity :0;}
+from {opacity : 1;}
+to {opacity : 0;}
 }
 
 @-webkit-keyframes alert-fade{
-from {opacity :1;}
-to {opacity :0;}
+from {opacity : 1;}
+to {opacity : 0;}
 }
