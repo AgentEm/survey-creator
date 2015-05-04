@@ -1,40 +1,42 @@
-<%= form_for(@survey) do |f| %>
-  <% if @survey.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@survey.errors.count, "error") %> prohibited this survey from being saved:</h2>
+<div class="form container">
+  <%= form_for(@survey) do |f| %>
+    <% if @survey.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@survey.errors.count, "error") %> prohibited this survey from being saved:</h2>
 
-      <ul>
-      <% @survey.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @survey.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :languages %><br>
+      <%= f.hidden_field :languages %>
+      <label for="en">en</label>
+      <input type="checkbox" name="en">
+
+      <label for="fr">fr</label>
+      <input type="checkbox" name="fr">
+
+      <label for="sp">sp</label>
+      <input type="checkbox" name="sp">
+
+      <label for="ch">ch</label>
+      <input type="checkbox" name="ch">
+
+    <div class="field">
+      <%= f.label :uses_category_selector, "Use the category selector:" %><br>
+      <%= f.check_box :uses_category_selector %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :languages %><br>
-    <%= f.hidden_field :languages %>
-    <label for="en">en</label>
-    <input type="checkbox" name="en">
-
-    <label for="fr">fr</label>
-    <input type="checkbox" name="fr">
-
-    <label for="sp">sp</label>
-    <input type="checkbox" name="sp">
-
-    <label for="ch">ch</label>
-    <input type="checkbox" name="ch">
-
-  <div class="field">
-    <%= f.label :uses_category_selector, "Use the category selector:" %><br>
-    <%= f.check_box :uses_category_selector %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

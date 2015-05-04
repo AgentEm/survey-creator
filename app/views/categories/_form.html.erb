@@ -1,51 +1,53 @@
-<%= form_for(@category) do |f| %>
-  <% if @category.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
+<div class="form container">
+  <%= form_for(@category) do |f| %>
+    <% if @category.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
 
-      <ul>
-      <% @category.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @category.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :colour %><br>
-    <%= f.select(:colour, [
-    "l_yellow",
-    "yellow",
-    "l_orange",
-    "orange",
-    "l_limegreen",
-    "limegreen",
-    "l_forestgreen",
-    "forestgreen",
-    "teal",
-    "tickitblue",
-    "l_skyblue",
-    "skyblue",
-    "l_navyblue",
-    "navyblue",
-    "l_violet",
-    "violet",
-    "l_purple",
-    "purple",
-    "l_pink",
-    "pink"
-    ]) %>
-  </div>
-  <div class="field">
-    <%= f.label :icon_id %><br>
-    <%= f.text_field :icon_id %>
-  </div>
-    <%= f.hidden_field :survey_id %>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+    <div class="field">
+      <%= f.label :colour %><br>
+      <%= f.select(:colour, [
+      "l_yellow",
+      "yellow",
+      "l_orange",
+      "orange",
+      "l_limegreen",
+      "limegreen",
+      "l_forestgreen",
+      "forestgreen",
+      "teal",
+      "tickitblue",
+      "l_skyblue",
+      "skyblue",
+      "l_navyblue",
+      "navyblue",
+      "l_violet",
+      "violet",
+      "l_purple",
+      "purple",
+      "l_pink",
+      "pink"
+      ]) %>
+    </div>
+    <div class="field">
+      <%= f.label :icon_id %><br>
+      <%= f.text_field :icon_id %>
+    </div>
+      <%= f.hidden_field :survey_id %>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>  
+</div>

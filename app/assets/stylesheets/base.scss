@@ -14,7 +14,7 @@ p {
 h2 {
   font-size: 2rem;
 }
-.container {
+.form.container {
   position: relative;
   top: 35%;
   transform: translateY(-35%);
@@ -48,31 +48,38 @@ h2 {
   }
   input[type=submit] {
     min-width: 10rem;
+    color: #fff;
+    &:hover {
+      color: #1dadef;
+    }
   }
   h2, form {
    text-align: center;
   }
+  input {
+    color: #333;
+  }
+  div.actions { //reset password button
+    margin-top: 2rem;
+  }
 }
- input {
-  color: #333;
-}
-.btn {
+
+.btn, input[type=submit] {
   font-size: 1rem;
   padding: 10px;
 }
 
-.btn-default {
+.btn-default, input[type=submit] {
   background-color: transparent;
-  border-color: #fff;
+  border: 2px solid #fff;
+  border-radius: 3px;
   color: #fff;
   &:hover {
     background-color: #fff;
-    border-color: #fff;
     color: #1dadef;
+    border: 2px solid #fff;
   }
 }
-
-
 
 .show-small {
   display:none;

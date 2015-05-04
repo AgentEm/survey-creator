@@ -5,8 +5,10 @@
 .tickit-logo {
   width: 4rem;
 }
-.bootstrap-link-padding {
-  //align the logged in message with the links in the nav
-  padding-top: 15px;
-  padding-bottom: 15px;
+.bootstrap-link {
+  //make the logged in nav message look like the other links in the nav
+  color: #777;
+  padding: 15px;
+  line-height: 20px;
+  font-style: italic;
 }

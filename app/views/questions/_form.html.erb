@@ -1,46 +1,49 @@
-<%= form_for(@question) do |f| %>
-  <% if @question.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
+<div class="form container">
+  <%= form_for(@question) do |f| %>
+    <% if @question.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
 
-      <ul>
-      <% @question.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @question.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label "Question_id", :question_id %><br>
+      <%= f.text_field :question_id %>
+    </div>
+    <div class="field">
+      <%= f.label :label %><br>
+      <%= f.text_area :label %>
+    </div>
+    <div class="field">
+      <%= f.label "Question_type_id", :question_type_id %><br>
+      <%= f.select(:question_type_id, [
+      "welcome",
+      "consent",
+      "number_picker",
+      "boxes",
+      "thumb",
+      "text_input",
+      "ranked_text_input",
+      "button",
+      "single_row_button",
+      "segmentd_slider",
+      "quote",
+      "message",
+      "three_column_short_answer",
+      "two_column_long_answer",
+      "month_year_picker"
+      ]) %>
+    </div>
+    <%= f.hidden_field :category_id %>
+    <div class="actions">
+      <%= f.submit %>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label "Question_id", :question_id %><br>
-    <%= f.text_field :question_id %>
-  </div>
-  <div class="field">
-    <%= f.label :label %><br>
-    <%= f.text_area :label %>
-  </div>
-  <div class="field">
-    <%= f.label "Question_type_id", :question_type_id %><br>
-    <%= f.select(:question_type_id, [
-    "welcome",
-    "consent",
-    "number_picker",
-    "boxes",
-    "thumb",
-    "text_input",
-    "ranked_text_input",
-    "button",
-    "single_row_button",
-    "segmentd_slider",
-    "quote",
-    "message",
-    "three_column_short_answer",
-    "two_column_long_answer",
-    "month_year_picker"
-    ]) %>
-  </div>
-  <%= f.hidden_field :category_id %>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
