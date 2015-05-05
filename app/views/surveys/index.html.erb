@@ -1,19 +1,21 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
+  <h2>TickiT Surveys</h2>
 
-<h2>TickiT Surveys</h2>
+    <% @surveys.each do |survey| %>
+        <h3><%= link_to survey.name, survey_path(survey) %></h3>
+        <div class="btn-group-md">
+          <%= link_to 'Edit', edit_survey_path(survey), class: "btn btn-default" %>
 
-  <% @surveys.each do |survey| %>
-      <h3><%= link_to survey.name, survey_path(survey) %></h3>
-      <div class="btn-group-md">
-        <%= link_to 'Edit', edit_survey_path(survey), class: "btn btn-default" %>
+          <%= link_to 'Create Category', new_category_path(survey_id: survey.id), class: "btn btn-default" %>
 
-        <%= link_to 'Create Category', new_category_path(survey_id: survey.id), class: "btn btn-default" %>
+          <%= link_to 'See all categories for this survey', survey_categories_path(survey_id: survey.id), class: "btn btn-default" %>
 
-        <%= link_to 'See all categories for this survey', survey_categories_path(survey_id: survey.id), class: "btn btn-default" %>
+          <%= link_to 'Delete', survey, method: :delete, data: { confirm: 'Are you sure you want to delete this survey?' }, class: "btn btn-danger" %>
 
-        <%= link_to 'Delete', survey, method: :delete, data: { confirm: 'Are you sure you want to delete this survey?' }, class: "btn btn-danger" %>
+          <%= link_to "View JSON", survey_path(survey, "json"), class: "btn btn-info" %>
+        </div>
+        <br>
+    <% end %>
 
-        <%= link_to "View JSON", survey_path(survey, "json"), class: "btn btn-info" %>
-      </div>
-      <br>
-  <% end %>
+</div>

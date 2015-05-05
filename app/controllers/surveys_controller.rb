@@ -24,31 +24,13 @@ class SurveysController < ApplicationController
   # POST /surveys
   # POST /surveys.json
   def create
-    langs = ""
-    if params[:en] == true
-      langs = langs + '1'
-    else
-      langs = langs + '0'
+    langs = [:en, :fr, :sp, :ch].map do |lang|
+      if params[lang] == "on"
+        lang.to_s
+      end
     end
-
-    if params[:fr] == true
-      langs = langs + '1'
-    else
-      langs = langs + '0'
-    end
-    if params[:sp] == true
-      langs = langs + '1'
-    else
-      langs = langs + '0'
-    end
-    if params[:ch] == true
-      langs = langs + '1'
-    else
-      langs = langs + '0'
-    end
-
     @survey = Survey.new(survey_params)
-    @survey.languages = langs
+    @survey.languages = langs.compact
 
 
     respond_to do |format|
