@@ -4,28 +4,36 @@ html, body {
 }
 body {
   background-color: #1dadef;
-  color: #333;
+  color: #fff;
   -webkit-font-smoothing: antialiased;
+}
+h2 {
+  font-family:'Raleway', sans-serif;
+  font-weight: 300;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+h3 {
+  text-transform: uppercase;
 }
 p {
   display: inline-block;
   max-width: 500px;
 }
-h2 {
-  font-size: 2rem;
+a {
+  color: #fff;
+  &:hover {
+    color: darken(#fff, 10);
+  }
+}
+input {
+  color: #333;
 }
 .form.container {
   position: relative;
   top: 35%;
   transform: translateY(-35%);
-  color: #fff;
-  h2 {
-    font-family:'Raleway', sans-serif;
-    font-weight: 300;
-  }
-  a {
-    color: #fff;
-  }
   form {
     margin: 3rem 0;
   }
@@ -33,8 +41,9 @@ h2 {
     font-weight: 300;
     margin: 0.5rem 0;
     font-size: 1.3rem;
+    text-transform: capitalize;
   }
-  input[type=text], input[type=email], input[type=password] {
+  input[type=text], input[type=email], input[type=password], textarea {
     border-radius: 3px;
     border: none;
     border-bottom:4px solid transparent;
@@ -49,14 +58,20 @@ h2 {
   input[type=submit] {
     min-width: 10rem;
     color: #fff;
+    margin-bottom: 2rem;
     &:hover {
       color: #1dadef;
     }
   }
+  select {
+    min-width: 20rem;
+    border: none;
+    color: #333;
+  }
   h2, form {
    text-align: center;
   }
-  input {
+  input, textarea {
     color: #333;
   }
   div.actions { //reset password button
@@ -78,6 +93,24 @@ h2 {
     background-color: #fff;
     color: #1dadef;
     border: 2px solid #fff;
+  }
+}
+
+.btn-danger {
+  background-color: #ee2a7b;
+  border-color: #ee2a7b;
+  &:hover {
+    background-color: darken(#ee2a7b, 10);
+    border-color: darken(#ee2a7b, 10);
+  }
+}
+
+.btn-info {
+  background-color: #88bb40;
+  border-color: #88bb40;
+  &:hover {
+    background-color: darken(#88bb40, 10);
+    border-color: darken(#88bb40, 10);
   }
 }
 
