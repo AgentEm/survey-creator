@@ -17,19 +17,10 @@
     </div>
     <div class="field">
       <%= f.label :languages %><br>
-      <%= f.hidden_field :languages %>
-      <label for="en">en</label>
-      <input type="checkbox" name="en">
-
-      <label for="fr">fr</label>
-      <input type="checkbox" name="fr">
-
-      <label for="sp">sp</label>
-      <input type="checkbox" name="sp">
-
-      <label for="ch">ch</label>
-      <input type="checkbox" name="ch">
-
+      <% Survey::LANGUAGES.each do |lang| %>
+        <%= f.label lang %>
+        <%= check_box_tag lang, "on", @survey.languages.include?(lang.to_s) %>
+      <% end %>
     <div class="field">
       <%= f.label :uses_category_selector, "Use the category selector?" %>
       <%= f.check_box :uses_category_selector %>

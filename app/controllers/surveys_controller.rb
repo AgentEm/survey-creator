@@ -19,18 +19,15 @@ class SurveysController < ApplicationController
 
   # GET /surveys/1/edit
   def edit
+
   end
 
   # POST /surveys
   # POST /surveys.json
   def create
-    langs = [:en, :fr, :sp, :ch].map do |lang|
-      if params[lang] == "on"
-        lang.to_s
-      end
-    end
+    langs = process_languages
     @survey = Survey.new(survey_params)
-    @survey.languages = langs.compact
+    @survey.languages = langs
 
 
     respond_to do |format|
@@ -47,6 +44,7 @@ class SurveysController < ApplicationController
   # PATCH/PUT /surveys/1
   # PATCH/PUT /surveys/1.json
   def update
+    @survey.languages = process_languages
     respond_to do |format|
       if @survey.update(survey_params)
         format.html { redirect_to @survey, notice: 'Survey was successfully updated.' }
@@ -77,5 +75,13 @@ class SurveysController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def survey_params
       params.require(:survey).permit(:name, :languages, :uses_category_selector)
+    end
+
+    def process_languages
+      Survey::LANGUAGES.map do |lang|
+        if params[lang] == "on"
+          lang.to_s
+        end
+      end.compact
     end
 end
