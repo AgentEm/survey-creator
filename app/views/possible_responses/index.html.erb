@@ -1,37 +1,31 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
+  <h2>Listing Possible Responses</h2>
 
-<h2>Listing Possible Responses</h2>
+      <% @possible_responses.each do |possible_response| %>
+      <div class="borderthing">
+        <h3>Value</h3>
+        <p><%= possible_response.value %></p>
+        <h3>Colour</h3>
+        <p><%= possible_response.colour %></p>
+        <h3>Label</h3>
+        <p><%= possible_response.label %></p>
+        <h3>Icon</h3>
+        <p><%= possible_response.icon_id %></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Value</th>
-      <th>Colour</th>
-      <th>Label</th>
-      <th>Icon</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @possible_responses.each do |possible_response| %>
-      <tr>
-        <td><%= possible_response.value %></td>
-        <td><%= possible_response.colour %></td>
-        <td><%= possible_response.label %></td>
-        <td><%= possible_response.icon_id %></td>
-        <td><%= link_to 'Show', possible_response %></td>
-        <td><%= link_to 'Edit', edit_possible_response_path(possible_response) %></td>
-        <td><%= link_to 'Delete', possible_response, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Create another possible response', new_possible_response_path(question_id: possible_response.question_id) %></td>
+        <%= link_to 'Show', possible_response, class: "btn btn-default" %>
+        <%= link_to 'Edit', edit_possible_response_path(possible_response), class: "btn btn-default" %>
+        <%= link_to 'Delete', possible_response, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+        <%= link_to 'Create another possible response', new_possible_response_path(question_id: possible_response.question_id), class: "btn btn-default" %>
         <!-- ^ this isn't quite what I want, I only want it to be once for the whole thing -->
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<%= link_to 'Back to all surveys', surveys_path %>
-<!-- TODO: add another possible response for this question<br>
-go back to the questions list -->
+      </div>
 
-<%#= link_to 'Create another possible response for this question', new_possible_response_path(question_id: @possible_response.question_id) %>
-<%#TODO: why doesn't this work? %>
+      <% end %>
+      <br>
+  <!-- TODO: add another possible response for this question<br>
+  go back to the questions list -->
+
+  <%#= link_to 'Create another possible response for this question', new_possible_response_path(question_id: @possible_response.question_id) %>
+  <%#TODO: why doesn't this work? %>
+
+</div>

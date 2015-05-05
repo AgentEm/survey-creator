@@ -1,31 +1,40 @@
-<p>
-  <strong>Question:</strong>
-  <%= @possible_response.question.label %>
-</p>
+<div class="container">
+  <h3>
+    <strong>Question</strong>
+  </h3>
+  <p>
+    <%= @possible_response.question.label %>
+  </p>
 
+  <h3>
+    <strong>Value</strong>
+  </h3>
+  <p>
+    <%= @possible_response.value %>
+  </p>
+  <h3>
+    <strong>Colour</strong>
+  </h3>
+  <p>
+    <%= @possible_response.colour %>
+  </p>
+  <h3>
+    <strong>Label</strong>
+  </h3>
+  <p>
+    <%= @possible_response.label %>
+  </p>
+  <h3>
+    <strong>Icon</strong>
+  </h3>
+  <p>
+    <%= @possible_response.icon_id %>
+  </p>
+  <br>
+  <%= link_to 'Edit', edit_possible_response_path(@possible_response), class: "btn btn-default" %>
 
-<p>
-  <strong>Value:</strong>
-  <%= @possible_response.value %>
-</p>
+  <%= link_to 'Create another possible response for this question', new_possible_response_path(question_id: @possible_response.question_id), class: "btn btn-default" %>
 
-<p>
-  <strong>Colour:</strong>
-  <%= @possible_response.colour %>
-</p>
+  <%= link_to 'See all possible responses for this question', question_possible_responses_path(question_id: @possible_response.question_id), class: "btn btn-default" %>
 
-<p>
-  <strong>Label:</strong>
-  <%= @possible_response.label %>
-</p>
-
-<p>
-  <strong>Icon:</strong>
-  <%= @possible_response.icon_id %>
-</p>
-
-<%= link_to 'Edit', edit_possible_response_path(@possible_response) %>
-
-<%= link_to 'Create another possible response for this question', new_possible_response_path(question_id: @possible_response.question_id) %>
-
-<%= link_to 'See all possible responses for this question', question_possible_responses_path(question_id: @possible_response.question_id) %>
+</div>

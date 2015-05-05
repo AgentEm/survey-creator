@@ -1,22 +1,30 @@
-<p>
-  <strong>Question:</strong>
-  <%= @question.question_id %>
-</p>
+<div class="container">
 
-<p>
-  <strong>Label:</strong>
-  <%= @question.label %>
-</p>
+  <h3>
+    <strong>Question</strong>
+  </h3>
+  <p>
+    <%= @question.question_id %>
+  </p>
 
-<p>
-  <strong>Question type:</strong>
-  <%= @question.question_type_id %>
-</p>
+  <h3>
+    <strong>Label</strong>
+  </h3>
+  <p>
+    <%= @question.label %>
+  </p>
+  <h3>
+    <strong>Question type</strong>
+  </h3>
+  <p>
+    <%= @question.question_type_id %>
+  </p>
+  <br>
+  <%= link_to 'Edit', edit_question_path(@question), class: "btn btn-default" %>
 
-<%= link_to 'Edit', edit_question_path(@question) %>
+  <%= link_to 'Create another question for this category', new_question_path(category_id: @question.category_id), class: "btn btn-default" %>
 
-<%= link_to 'Create another question for this category', new_question_path(category_id: @question.category_id) %>
+  <%= link_to 'Create a possible response for this question',  new_possible_response_path(question_id: @question.id), class: "btn btn-default" %>
 
-<%= link_to 'Create a possible response for this question',  new_possible_response_path(question_id: @question.id) %>
-
-<%= link_to 'See all questions for this category', category_questions_path(category_id: @question.category_id) %>
+  <%= link_to 'See all questions for this category', category_questions_path(category_id: @question.category_id), class: "btn btn-default" %>
+</div>

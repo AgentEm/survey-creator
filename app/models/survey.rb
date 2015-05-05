@@ -4,6 +4,6 @@ class Survey < ActiveRecord::Base
 
   validates :name, :languages, presence: true
   validates :name, uniqueness: true
-  serialize :languages
+  serialize :languages, Array
   LANGUAGES = [:en, :fr, :sp, :ch]
 end

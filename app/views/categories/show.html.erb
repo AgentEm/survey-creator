@@ -1,29 +1,37 @@
-<p>
-  <strong>Survey:</strong>
-  <%= @category.survey.name %>
-</p>
+<div class="container">
+  <h3>
+    <strong>Survey</strong>
+  </h3>
+  <p>
+    <%= @category.survey.name %>
+  </p>
+  <h3>
+    <strong>Name</strong>
+  </h3>
+  <p>
+    <%= @category.name %>
+  </p>
+  <h3>
+    <strong>Colour</strong>
+  </h3>
+  <p>
+    <%= @category.colour %>
+  </p>
+  <h3>
+    <strong>Icon</strong>
+  </h3>
+  <p>
+    <%= @category.icon_id %>
+  </p>
+  <br>
 
-<p>
-  <strong>Name:</strong>
-  <%= @category.name %>
-</p>
 
-<p>
-  <strong>Colour:</strong>
-  <%= @category.colour %>
-</p>
+  <%= link_to 'Edit', edit_category_path(@category), class: "btn btn-default" %>
 
-<p>
-  <strong>Icon:</strong>
-  <%= @category.icon_id %>
-</p>
+  <%= link_to 'Create another category for this survey', new_category_path(survey_id: @category.survey_id), class: "btn btn-default" %>
 
+  <%= link_to 'Create a question for this category',  new_question_path(category_id: @category.id), class: "btn btn-default" %>
 
+  <%= link_to 'See all categories for this survey', survey_categories_path(survey_id: @category.survey_id), class: "btn btn-default" %>
 
-<%= link_to 'Edit', edit_category_path(@category) %>
-
-<%= link_to 'Create another category for this survey', new_category_path(survey_id: @category.survey_id) %>
-
-<%= link_to 'Create a question for this category',  new_question_path(category_id: @category.id) %>
-
-<%= link_to 'See all categories for this survey', survey_categories_path(survey_id: @category.survey_id) %>
+</div>
